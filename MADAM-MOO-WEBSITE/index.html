@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <title>MADAM MOO — Smash Burger Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <img class="top-logo" src="images/logo.png" alt="MADAM MOO">
+      <p class="eyebrow">SMASH BURGER SHOP • DONE RIGHT</p>
+      <h1>MADAM <span>MOO</span></h1>
+      <p class="hero-copy">سماش برجر طازج، صوصات مميزة، وبطاطس مقرمشة.<br>اختاري المفضّل واطلبيه على واتساب.</p>
+      <a class="primary-btn" href="#menu">ORDER NOW <span>↘</span></a>
+    </div>
+  </header>
+
+  <nav class="sticky-nav">
+    <div class="container nav-inner">
+      <a href="#burgers">🍔 البرجر</a>
+      <a href="#fries">🍟 البطاطس</a>
+      <a href="#drinks">🥤 المشروبات</a>
+      <a href="#addons">➕ الإضافات</a>
+      <a href="#sauces">🥫 الصوصات</a>
+      <a href="#sides">🧀 الإضافات اللذيذة</a>
+      <button id="openCartBtn" class="cart-btn">🛒 السلة <span id="cartCount">0</span></button>
+    </div>
+  </nav>
+
+  <main id="menu" class="container main">
+    <section class="intro-section">
+      <div>
+        <p class="section-kicker">THE MENU</p>
+        <h2>Pick your <span>Moo.</span></h2>
+      </div>
+      <p>كل حاجة معمولة عشان توصلك سخنة، مقرمشة، ومليانة طعم.</p>
+    </section>
+
+    <section id="burgers" class="menu-section">
+      <div class="section-heading">
+        <div><span>01</span><h2>BURGERS <small>| البرجر</small></h2></div>
+        <p>اختر الحجم: سنجل / دبل / تريبل</p>
+      </div>
+      <div id="burgerGrid" class="product-grid"></div>
+    </section>
+
+    <section id="fries" class="menu-section">
+      <div class="section-heading">
+        <div><span>02</span><h2>FRIES <small>| البطاطس</small></h2></div>
+        <p>بطاطس مقرمشة بتغطيات مميزة</p>
+      </div>
+      <div id="friesGrid" class="product-grid"></div>
+    </section>
+
+    <section id="drinks" class="menu-section">
+      <div class="section-heading">
+        <div><span>03</span><h2>DRINKS <small>| المشروبات</small></h2></div>
+        <p>مشروبات منعشة وباردة</p>
+      </div>
+      <div id="drinksGrid" class="product-grid compact"></div>
+    </section>
+
+    <section id="addons" class="menu-section">
+      <div class="section-heading">
+        <div><span>04</span><h2>ADD-ONS <small>| الإضافات</small></h2></div>
+        <p>زوديها على طلبك</p>
+      </div>
+      <div id="addonsGrid" class="product-grid compact"></div>
+    </section>
+
+    <section id="sauces" class="menu-section">
+      <div class="section-heading">
+        <div><span>05</span><h2>SAUCES <small>| الصوصات</small></h2></div>
+        <p>صوص زيادة؟ أكيد.</p>
+      </div>
+      <div id="saucesGrid" class="product-grid compact"></div>
+    </section>
+
+    <section id="sides" class="menu-section">
+      <div class="section-heading">
+        <div><span>06</span><h2>DIRTY SIDES <small>| الإضافات اللذيذة</small></h2></div>
+        <p>مقرمشة من الخارج، سايحة من الداخل</p>
+      </div>
+      <div id="sidesGrid" class="product-grid"></div>
+    </section>
+
+    <section class="menu-photo">
+      <img src="images/menu.jpg" alt="MADAM MOO menu">
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">MADAM <b>MOO</b></div>
+        <p>SMASH BURGER SHOP • DONE RIGHT</p>
+      </div>
+      <div>
+        <p>📞 <a href="tel:01039456864">010 39 456 864</a></p>
+        <p>📍 EL GEISH ROAD, AL EQBAI ST, NEXT TO LA POIRE</p>
+        <p>الإقبال على البحر بجوار لا بوار</p>
+      </div>
+    </div>
+    <div class="copyright">© MADAM MOO — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <div id="cartDrawer" class="drawer-backdrop hidden">
+    <aside class="drawer">
+      <div class="drawer-head">
+        <div>
+          <span class="section-kicker">YOUR ORDER</span>
+          <h2>طلبك 🛒</h2>
+        </div>
+        <button class="icon-btn" id="closeCartBtn">×</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div><span>الإجمالي</span><strong id="cartTotal">0 ج.م</strong></div>
+        <button id="checkoutBtn" class="primary-btn full">متابعة الطلب ✨</button>
+      </div>
+    </aside>
+  </div>
+
+  <div id="checkoutModal" class="modal-backdrop hidden">
+    <div class="checkout-modal">
+      <button class="icon-btn modal-close" id="closeCheckoutBtn">×</button>
+      <span class="section-kicker">CHECKOUT</span>
+      <h2>بيانات الطلب</h2>
+      <p class="muted">املئي بياناتك وسيتم تجهيز الأوردر وإرساله على واتساب المطعم.</p>
+      <form id="checkoutForm">
+        <label>الاسم بالكامل *
+          <input id="customerName" required placeholder="مثال: أحمد محمد">
+        </label>
+        <label>رقم التليفون *
+          <input id="customerPhone" required inputmode="tel" placeholder="01xxxxxxxxx">
+        </label>
+        <label>العنوان بالتفصيل *
+          <textarea id="customerAddress" required rows="3" placeholder="المنطقة، الشارع، رقم البيت..."></textarea>
+        </label>
+        <label>ملاحظات / تعليمات خاصة
+          <textarea id="customerNotes" rows="2" placeholder="بدون بصل، extra sauce..."></textarea>
+        </label>
+        <div class="checkout-total">
+          <span>الإجمالي</span>
+          <strong id="checkoutTotal">0 ج.م</strong>
+        </div>
+        <button type="submit" class="whatsapp-btn">🟢 إرسال الأوردر على واتساب</button>
+        <button type="button" id="backToCartBtn" class="secondary-btn">← رجوع للسلة</button>
+      </form>
+      <p class="tiny-note">سيتم فتح واتساب على رقم الدليفري 01039456864 مع تفاصيل أوردرك كاملة.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
